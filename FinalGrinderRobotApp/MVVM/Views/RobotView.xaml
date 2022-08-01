@@ -1,0 +1,432 @@
+﻿<UserControl x:Class="FinalGrinderRobotApp.MVVM.Views.RobotView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FinalGrinderRobotApp.MVVM.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="920">
+
+    <Border Background="#FFE6E8D2"
+            CornerRadius="20"
+            BorderBrush="Black"
+            BorderThickness="5">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="LABMAN"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Margin="50,0,0,0"
+                       Foreground="Black"
+                       FontSize="22"
+                       FontWeight="Bold"/>
+
+            <TextBlock Text="Grinder Test Application"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="Black"
+                       FontFamily="SegoeUI"
+                       FontSize="22"/>
+
+            <Button x:Name="CloseButton"
+                    Content="X"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Margin="0,10,10,0"
+                    Background="#FFDC4141"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontFamily="SegoeUI"
+                    Height="20"
+                    Width="20"
+                    Click="CloseBtn_Click"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton x:Name="StartButton"
+                             Content="Start"
+                             IsChecked="{Binding Path = dataPanel.StartState, Mode=TwoWay}"
+                             Style="{StaticResource ButtonTheme}"/>
+                <RadioButton x:Name="StopButton" 
+                             Content="Stop"
+                             IsChecked="{Binding Path = dataPanel.StopState, Mode=TwoWay}"
+                             Style="{StaticResource ButtonTheme}"/>
+                <RadioButton x:Name="ResetButton"
+                             Content="Reset"
+                             IsChecked="{Binding Path = dataPanel.ResetState, Mode=TwoWay}"
+                             Style="{StaticResource ButtonTheme}"/>
+            </StackPanel>
+
+            <TextBlock x:Name="TotalInputWeightText"
+                       Text="Input Vial Weight:"
+                       Grid.Row="1" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="160,8,0,0"/>
+
+            <TextBox x:Name="TotalInputWeight"
+                     Text="{Binding Path = dataPanel.InputVialWeight, Mode=TwoWay}"
+                     Grid.Row="1"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     HorizontalContentAlignment="Right"
+                     Margin="260,8,0,0"
+                     Width="50"
+                     Height="20"/>
+
+            <TextBlock x:Name="Milligrams"
+                       Text="mg"
+                       Grid.Row="1" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="310,8,0,0"/>
+
+            <TextBlock x:Name="TargetOutputWeight"
+                       Text="Target Output Vial Weight:"
+                       Grid.Row="1" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="160,35,0,0"/>
+
+            <TextBox x:Name="TargetOutput" 
+                     Text="{Binding Path = dataPanel.TargetOutputVialWeight, Mode=TwoWay}"
+                     Grid.Row="1" 
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     HorizontalContentAlignment="Right"
+                     Margin="305,35,0,10"
+                     Width="50"
+                     Height="20"/>
+
+            <TextBlock x:Name="MaxOutputWeightText"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="355,35,0,0">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="mg ({0}mg max)">
+                        <Binding Path="dataPanel.MaxOutputVialWeight" Mode="OneWay"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+
+            <TextBox x:Name="ExportPath"
+                     Text="{Binding Path = dataPanel.ExportPath, Mode=TwoWay}"
+                     Grid.Row="1"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     HorizontalContentAlignment="Left"
+                     Margin="600,8,0,0"
+                     Width="250"
+                     Height="20"/>
+
+            <TextBlock x:Name="ExportPathLabel"
+                       Text="ExportPath:"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="540,8,0,0"/>
+
+            <CheckBox x:Name="ExportButton"
+                      Content="Export to Document"
+                      IsChecked="{Binding Path = dataPanel.ExportState, Mode=TwoWay}"
+                      Grid.Row="1"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Left"
+                      Margin="540,35,0,0"/>
+
+            <TextBlock Text="Robot Action:"
+                       Grid.Row="1" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left" 
+                       Margin="160,60,0,0" />
+
+            <TextBlock x:Name="RobotAction"
+                       Text="{Binding Path = dataPanel.RobotAction, Mode=OneWay}"
+                       Grid.Row="1"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"
+                       Margin="235,60,0,0"
+                       FontWeight="Bold"/>
+
+
+            <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Height="400" Width="730">
+
+                <Border CornerRadius="20"
+                        BorderBrush="Black"
+                        BorderThickness="2"/>
+                
+                <TextBlock Text="Input "
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left" 
+                           Margin="30,15,0,0"/>
+
+                <Border x:Name="InputRackBorder"
+                        CornerRadius="5"
+                        BorderBrush="White"
+                        Background="Gray"
+                        BorderThickness="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        Margin="30,35,0,0"
+                        Width="150" 
+                        Height="120">
+
+                    <TextBlock HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="5,0,0,0"
+                               Width="150"
+                               Height="50"
+                               Foreground="White"
+                               FontSize="10">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Number of Input Vials: {0}/96 &#x0d;&#x0a;Number of Used Vials: {1}/96 &#x0d;&#x0a;Total Number of Vials: {2}">
+                                <Binding Path="inputRack.InputVialNumber" Mode="TwoWay"/>
+                                <Binding Path="inputRack.UsedVialNumber" Mode="TwoWay"/>
+                                <Binding Path="inputRack.TotalVialNumber" Mode="TwoWay"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+
+                <Canvas x:Name="RA0"  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="185,35,0,0" Height="50">
+                    <Line X1="0" Y1="25" X2="55" Y2="25" Stroke="{Binding Path = robotArm.RA0, Mode=OneWay}"  StrokeThickness="20"/>
+                    <Line X1="50" Y1="25" X2="50" Y2="25" Stroke="{Binding Path = robotArm.RA0, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <TextBlock x:Name="GrinderLabel"
+                           Text="Grinder."                           
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left" 
+                           Margin="332,15,0,0"/>
+            
+                <ProgressBar x:Name="GrinderProgressBar" 
+                             Value="{Binding Path = grinder.ProgressValue, Mode=OneWay}"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Left" 
+                             Margin="260,35,0,0"
+                             Width="200" 
+                             Height="50"
+                             BorderBrush="Black" 
+                             Background="White"/>
+
+                <Canvas x:Name="RA2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="471,35,0,0" Height="50">
+                    <Line X1="0" Y1="25" X2="55" Y2="25" Stroke="{Binding Path = robotArm.RA2, Mode=OneWay}" StrokeThickness="20"/>
+                    <Line X1="50" Y1="25" X2="50" Y2="25" Stroke="{Binding Path = robotArm.RA2, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <TextBlock x:Name="DispenseLabel"
+                           Text="Dispenser"                         
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           Margin="550,15,0,0"/>
+
+                <Border x:Name="DispenseBorder"
+                        CornerRadius="5"
+                        BorderBrush="White"
+                        Background="Gray"
+                        BorderThickness="2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        Margin="550,35,0,0"
+                        Width="150" 
+                        Height="50">
+
+                    <TextBlock x:Name="Dispense"                         
+                         VerticalAlignment="Top"
+                         HorizontalAlignment="Left" 
+                         Margin="5,0,0,0"
+                         Foreground="White"
+                         Width="150" Height="50"
+                         FontSize="10">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Dispenser Empty?: {0} &#x0d;&#x0a;Vials to Dispense: {1}/3 &#x0d;&#x0a;{2}">
+                                <Binding Path="dispenser.IsEmpty" Mode="OneWay"/>
+                                <Binding Path="dispenser.OutputVialDispenseNumber" Mode="OneWay"/>
+                                <Binding Path="dispenser.DispensingString" Mode="OneWay"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+
+                <Canvas x:Name="DispenseAct" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="630,100,0,0" RenderTransformOrigin="0.5,0.5" Height="50">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Line X1="0" Y1="25" X2="100" Y2="25" Stroke="{Binding Path = dispenser.DispenserAction, Mode=OneWay}" StrokeThickness="20"/>
+                    <Line X1="100" Y1="25" X2="100" Y2="25" Stroke="{Binding Path = dispenser.DispenserAction, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <Canvas x:Name="RA4" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="610,100,0,0" RenderTransformOrigin="0.5,0.5" Height="50">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Line X1="0" Y1="25" X2="400" Y2="25" Stroke="{Binding Path = robotArm.RA4, Mode=OneWay}" StrokeThickness="20"/>
+                    <Line X1="400" Y1="25" X2="400" Y2="25" Stroke="{Binding Path = robotArm.RA4, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <TextBlock x:Name="OutputVialNameLabel"
+                           Text="Output Vial Name:"                           
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           Margin="574,260,0,0"
+                           Height="20"/>
+
+                <TextBlock x:Name="OutputVialName"
+                           Text="{Binding Path = weight.OutputVialName, Mode=TwoWay}"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           TextAlignment="Center"
+                           Margin="550,270,0,0"
+                           Width="150" Height="50"
+                           FontSize="30"/>
+
+                <TextBlock x:Name="OutputWeightLabel"
+                           Text="Output Vial Weight:"                           
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           Margin="574,315,0,0"
+                           Height="20"/>
+
+                <TextBlock x:Name="OutputWeight"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           TextAlignment="Center"
+                           Margin="550,325,0,0"
+                           Width="150" Height="50"
+                           FontSize="30">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat=" {0} mg">
+                            <Binding Path="weight.WeightValue" Mode="TwoWay"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+
+                <Canvas x:Name="RA1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="275,250,0,0" RenderTransformOrigin="0.5,0.5" Height="50">
+                    <Line X1="0" Y1="25" X2="200" Y2="25" Stroke="{Binding Path = robotArm.RA1, Mode=OneWay}" StrokeThickness="20"/>
+                    <Line X1="200" Y1="25" X2="200" Y2="25" Stroke="{Binding Path = robotArm.RA1, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <Canvas x:Name="RA3" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="500,320,0,0" RenderTransformOrigin="0.5,0.5" Height="50">
+                    <Canvas.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Canvas.RenderTransform>
+                    <Line X1="0" Y1="25" X2="200" Y2="25" Stroke="{Binding Path = robotArm.RA3, Mode=OneWay}" StrokeThickness="20"/>
+                    <Line X1="200" Y1="25" X2="200" Y2="25" Stroke="{Binding Path = robotArm.RA3, Mode=OneWay}" StrokeThickness="50" StrokeEndLineCap="Triangle"/>
+                </Canvas>
+
+                <TextBlock x:Name="OutputRacksLabel"
+                           Text="Output Racks"                           
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left" 
+                           Margin="30,200,0,0"/>
+
+                <Border x:Name="OutputRack1Border"
+                        CornerRadius="5"
+                        Background="Gray"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        Margin="30,220,0,0"
+                        Width="150" 
+                        Height="50">
+
+                    <TextBlock x:Name="OutputRack1"                          
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="5,0,0,0"
+                               Width="150"
+                               Height="50"
+                               Foreground="White"
+                               FontSize="10">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Number of Output Vials: {0}/96 &#x0d;&#x0a;Number of Empty Vials: {1}/96 &#x0d;&#x0a;Total Number of Vials: {2}">
+                                <Binding Path="outputRack1.OutputVialNumber" Mode="TwoWay"/>
+                                <Binding Path="outputRack1.EmptyVialNumber" Mode="TwoWay"/>
+                                <Binding Path="outputRack1.TotalVialNumber" Mode="TwoWay"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+
+                <Border x:Name="OutputRack2Border"
+                        CornerRadius="5"
+                        Background="Gray"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        Margin="30,280,0,0"
+                        Width="150" 
+                        Height="50">
+
+                    <TextBlock x:Name="OutputRack2"                             
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="5,0,0,0"
+                               Width="150" 
+                               Height="50"
+                               Foreground="White"
+                               FontSize="10">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Number of Output Vials: {0}/96 &#x0d;&#x0a;Number of Empty Vials: {1}/96 &#x0d;&#x0a;Total Number of Vials: {2}">
+                                <Binding Path="outputRack2.OutputVialNumber" Mode="OneWay"/>
+                                <Binding Path="outputRack2.EmptyVialNumber" Mode="OneWay"/>
+                                <Binding Path="outputRack2.TotalVialNumber" Mode="OneWay"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+
+                <Border x:Name="OutputRack3Border"
+                        CornerRadius="5"
+                        Background="Gray"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top" 
+                        Margin="30,340,0,0"
+                        Width="150" 
+                        Height="50">
+
+                    <TextBlock x:Name="OutputRack3"                               
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="5,0,0,0"
+                               Width="150" 
+                               Height="50"
+                               Foreground="White"
+                               FontSize="10">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Number of Output Vials: {0}/96 &#x0d;&#x0a;Number of Empty Vials: {1}/96 &#x0d;&#x0a;Total Number of Vials: {2}">
+                                <Binding Path="outputRack3.OutputVialNumber" Mode="OneWay"/>
+                                <Binding Path="outputRack3.EmptyVialNumber" Mode="OneWay"/>
+                                <Binding Path="outputRack3.TotalVialNumber" Mode="OneWay"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
