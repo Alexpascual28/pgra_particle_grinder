@@ -71,8 +71,6 @@
 
 ##  Modules
 
-<details closed><summary>All Modules</summary>
-
 <details closed><summary>.</summary>
 
 | File                                                                                                                        | Summary                         |
@@ -124,8 +122,6 @@
 | File                                                                                                                                              | Summary                         |
 | ---                                                                                                                                               | ---                             |
 | [RobotViewModel.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/ViewModel/RobotViewModel.cs) | <code>► INSERT-TEXT-HERE</code> |
-
-</details>
 
 </details>
 
