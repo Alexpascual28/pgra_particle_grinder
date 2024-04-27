@@ -75,7 +75,7 @@
 
 | File                                                                                                                        | Summary                         |
 | ---                                                                                                                         | ---                             |
-| [FinalGrinderRobotApp.sln](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp.sln) | <code>► INSERT-TEXT-HERE</code> |
+| [FinalGrinderRobotApp.sln](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp.sln) | <code> </code> |
 
 </details>
 
@@ -83,12 +83,12 @@
 
 | File                                                                                                                                                   | Summary                         |
 | ---                                                                                                                                                    | ---                             |
-| [MainWindow.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MainWindow.xaml)                         | <code>► INSERT-TEXT-HERE</code> |
-| [MainWindow.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MainWindow.xaml.cs)                   | <code>► INSERT-TEXT-HERE</code> |
-| [App.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/App.xaml.cs)                                 | <code>► INSERT-TEXT-HERE</code> |
-| [AssemblyInfo.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/AssemblyInfo.cs)                         | <code>► INSERT-TEXT-HERE</code> |
-| [App.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/App.xaml)                                       | <code>► INSERT-TEXT-HERE</code> |
-| [FinalGrinderRobotApp.csproj](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/FinalGrinderRobotApp.csproj) | <code>► INSERT-TEXT-HERE</code> |
+| [MainWindow.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MainWindow.xaml)                         | <code> </code> |
+| [MainWindow.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MainWindow.xaml.cs)                   | <code> </code> |
+| [App.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/App.xaml.cs)                                 | <code> </code> |
+| [AssemblyInfo.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/AssemblyInfo.cs)                         | <code> </code> |
+| [App.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/App.xaml)                                       | <code> </code> |
+| [FinalGrinderRobotApp.csproj](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/FinalGrinderRobotApp.csproj) | <code> </code> |
 
 </details>
 
@@ -96,7 +96,7 @@
 
 | File                                                                                                                                   | Summary                         |
 | ---                                                                                                                                    | ---                             |
-| [ButtonTheme.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/Theme/ButtonTheme.xaml) | <code>► INSERT-TEXT-HERE</code> |
+| [ButtonTheme.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/Theme/ButtonTheme.xaml) | <code> </code> |
 
 </details>
 
@@ -104,7 +104,7 @@
 
 | File                                                                                                                                  | Summary                         |
 | ---                                                                                                                                   | ---                             |
-| [RobotModel.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Model/RobotModel.cs) | <code>► INSERT-TEXT-HERE</code> |
+| [RobotModel.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Model/RobotModel.cs) | <code> </code> |
 
 </details>
 
@@ -112,8 +112,8 @@
 
 | File                                                                                                                                          | Summary                         |
 | ---                                                                                                                                           | ---                             |
-| [RobotView.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Views/RobotView.xaml.cs) | <code>► INSERT-TEXT-HERE</code> |
-| [RobotView.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Views/RobotView.xaml)       | <code>► INSERT-TEXT-HERE</code> |
+| [RobotView.xaml.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Views/RobotView.xaml.cs) | <code> </code> |
+| [RobotView.xaml](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/Views/RobotView.xaml)       | <code> </code> |
 
 </details>
 
@@ -121,7 +121,7 @@
 
 | File                                                                                                                                              | Summary                         |
 | ---                                                                                                                                               | ---                             |
-| [RobotViewModel.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/ViewModel/RobotViewModel.cs) | <code>► INSERT-TEXT-HERE</code> |
+| [RobotViewModel.cs](https://github.com/Alexpascual28/pgra_particle_grinder.git/blob/master/FinalGrinderRobotApp/MVVM/ViewModel/RobotViewModel.cs) | <code> </code> |
 
 </details>
 
